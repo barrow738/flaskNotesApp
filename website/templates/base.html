@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+    <title>{% block title %} {% endblock %} - FLask notes app</title>
+</head>
+<body>
+<div class="container-fluid top-menu">
+    <div class="container">
+        <nav>
+            <a href="/" class="logo">Notes app</a>
+            <div class="menu-div">
+                <ul>
+                    <li>
+                        <a href="/sign-up">Sign up</a>
+                    </li>
+                    <li>
+                        <a href="/login">Login</a>
+                    </li>
+                    <li>
+                        <a href="/logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+<main>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                {% if category == 'error' %}
+                    <div class="alert danger" role="alert">
+                        <div class="message section">
+                            {{message}}
+                        </div>
+                        <div class="close-alert-section">
+                            <button type="button" class="close-alert" data-dismiss="alert">&times;</button>
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="alert success" role="alert">
+                        <div class="message section">
+                            {{message}}
+                        </div>
+                        <div class="close-alert-section">
+                            <button type="button" class="close-alert" data-dismiss="alert">&times;</button>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    {% block content %} {% endblock %}
+
+</main>
+<script src="{{ url_for('static', filename='app.js') }}">
+</script>

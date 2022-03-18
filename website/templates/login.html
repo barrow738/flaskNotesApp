@@ -1,0 +1,24 @@
+{% extends 'auth-template.html' %}
+
+{% block title %}
+Sign up
+{% endblock %}
+
+{% block formTitle %}
+Login
+{% endblock %}
+
+{% block formContent %}
+    <form action="" method="POST">
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" id="email" name="email" class="todo-input" required placeholder="Email address">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" class="todo-input" required placeholder="******">
+            </div>
+            <input type="submit" class="btn btn-main" name="submit" value="Login">
+        </form>
+<p><small>or <a href="/sign-up">Sign up</a></small></p>
+{% endblock %}
