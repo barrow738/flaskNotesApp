@@ -1,6 +1,6 @@
-const todoInput = document.querySelector('.todo-input')
-const todoBtn = document.querySelector('.todo-btn')
-const todoList = document.querySelector('.todo-list')
+//const todoInput = document.querySelector('.todo-input')
+//const todoBtn = document.querySelector('.todo-btn')
+//const todoList = document.querySelector('.todo-list')
 const alert = document.querySelector('.alert')
 const dismissAlert = document.querySelector('.close-alert')
 

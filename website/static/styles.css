@@ -343,6 +343,9 @@ input{
     align-items:center;
     justify-content:space-between;
 }
+.ml-n2{
+    margin-left:-1.2rem;
+}
 .close-alert-section button{
     background:transparent;
     border:none;
